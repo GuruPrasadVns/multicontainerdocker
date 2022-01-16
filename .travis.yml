@@ -2,11 +2,11 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - docker build -t prasag1/react-test -f ./client/Dockerfile.dev ./
+#before_install:
+# - docker build -t prasag1/react-test -f ./client/Dockerfile.dev ./client
 
-script:
-  - docker run -e CI=true prasag1/react-test npm run test
+#script:
+# - docker run -e CI=true prasag1/react-test npm test
 
 after_success:
   - docker build -t prasag1/multi-client ./client
